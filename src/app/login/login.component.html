@@ -4,6 +4,7 @@
     <form [formGroup]="form">
       <app-input
         label="Email"
+        name="email"
         [errorMessage]="emailErrorMessage"
         formControlName="email"
         required
@@ -12,6 +13,7 @@
       <app-spacer size="medium"></app-spacer>
       <app-input
         label="Password"
+        name="password"
         [errorMessage]="'Minimum 5 characters'"
         formControlName="password"
         required

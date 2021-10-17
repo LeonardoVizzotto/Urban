@@ -3,6 +3,7 @@
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
 ## Demo
+
 https://user-images.githubusercontent.com/19351745/137636314-95deea62-4c79-43a3-9d20-4f6320750342.mov
 
 ## Instaling
@@ -23,4 +24,4 @@ Run `npm test` to execute the unit tests via [Jest](https://jestjs.io/).
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run `npm run e2e` to execute the end-to-end tests via a [Cypress](https://www.cypress.io/).
