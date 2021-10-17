@@ -19,7 +19,7 @@ export class SlotSelectionComponent {
   constructor(
     private slotsService: SlotsService,
     private basketService: BasketService,
-    private router: Router
+    private router: Router,
   ) {}
 
   public loadMoreSlots() {

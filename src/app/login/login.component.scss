@@ -8,7 +8,7 @@
   height: 100%;
   background-image: url("https://res.cloudinary.com/huxr6hrje/image/upload/f_auto,w_2000/v1620752669/b2c-art/home-2021/Homepage_Banner_A_3x.jpg");
 
-  .content {
+  > .content {
     background-color: rgba(map-get-deep($color, grey-dark), 0.45);
     border-radius: 4px;
     width: max(45vw, 300px);

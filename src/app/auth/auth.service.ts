@@ -46,12 +46,10 @@ export class AuthenticationService {
   }
 
   private isTokenValid(token: string) {
-    console.log(token?.charAt(0))
     return token?.charAt(0) === '@';
   }
 
   private getUserData(token: string) {
-    console.log(this.isTokenValid(token))
     if (!this.isTokenValid(token)) {
       return throwError({
         message: 'Invalid token',
