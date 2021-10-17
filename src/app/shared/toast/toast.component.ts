@@ -1,5 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { of, Subscription } from 'rxjs';
 import { delay, filter, tap } from 'rxjs/operators';
 import { Toast } from 'src/app/services/toast/model';
 import { ToastService } from 'src/app/services/toast/toast.service';
@@ -28,7 +28,10 @@ export class ToastComponent implements OnInit, OnDestroy {
         }),
         delay(25)
       )
-      .subscribe((toast) => (toast.show = true));
+      .subscribe((toast) => {
+        of(toast).pipe(delay(10000)).subscribe(this.close.bind(this));
+        toast.show = true;
+      });
 
     const dismisses$ = this.toastService.dismisses
       .pipe(delay(250))

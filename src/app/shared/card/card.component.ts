@@ -5,7 +5,7 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss'],
 })
-export class CardComponent implements OnInit {
+export class CardComponent {
   @Input() imageUrl?: string;
   @Input() imageAlt?: string;
   @Input() imageHidden?: boolean;
@@ -13,6 +13,4 @@ export class CardComponent implements OnInit {
   @Output() onClick = new EventEmitter();
 
   constructor() {}
-
-  ngOnInit(): void {}
 }

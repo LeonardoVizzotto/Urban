@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators, FormControl } from '@angular/forms';
 import { throwError, Observable } from 'rxjs';
 import { take, catchError } from 'rxjs/operators';
@@ -12,7 +12,7 @@ import { ToastService } from '../services/toast/toast.service';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.scss'],
 })
-export class LoginComponent {
+export class LoginComponent implements OnInit {
   form = this.fb.group({
     email: [
       '',
@@ -34,6 +34,13 @@ export class LoginComponent {
     private fb: FormBuilder,
     private toastService: ToastService
   ) {}
+
+  ngOnInit() {
+    const user = this.authService.currentUserValue;
+    if (user) {
+      this.router.navigate([ROUTES.SLOTS]);
+    }
+  }
 
   login() {
     this.authService

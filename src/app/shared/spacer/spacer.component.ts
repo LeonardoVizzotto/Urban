@@ -14,7 +14,7 @@ export type Size = Small | Medium | Large;
 export class SpacerComponent implements OnInit {
   @Input() size: Size;
   @HostBinding('attr.aria-hidden')
-  private ariaHidden = true;
+  public ariaHidden = true;
 
   @HostBinding('class') private hostClass: {
     [key: string]: boolean;

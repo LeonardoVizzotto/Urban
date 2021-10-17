@@ -18,7 +18,6 @@ export class BasketService {
   public appointments$ = this.appointmentsSubject$.asObservable();
 
   constructor() {
-    this.bookAppointment();
   }
 
   public selectSlot(slot: Slot) {
@@ -44,7 +43,7 @@ export class BasketService {
 
   public bookAppointment() {
     if (!this.selectedSlot || !this.selectedWorker) {
-      return; // TODO throw
+      return;
     }
 
     this._appointments.push({

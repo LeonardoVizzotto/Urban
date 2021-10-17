@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject, of, throwError } from 'rxjs';
 import { first, map } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { User } from './model';
 
 @Injectable({ providedIn: 'root' })
@@ -9,7 +10,7 @@ export class AuthenticationService {
   public currentUser$ = this.currentUserSubject$.asObservable();
 
   constructor() {
-    const token = localStorage.getItem('authToken') || '';
+    const token = localStorage.getItem(environment.TOKEN_NAME) || '';
     this.getUserData(token)
       .pipe(first())
       .subscribe((user) => this.currentUserSubject$.next(user));
@@ -22,7 +23,7 @@ export class AuthenticationService {
   public login(email: string, password: string) {
     return this.validateCredentials({ email, password }).pipe(
       map(({ user, token }) => {
-        localStorage.setItem('authToken', token);
+        localStorage.setItem(environment.TOKEN_NAME, token);
         this.currentUserSubject$.next(user);
         return user;
       })
@@ -30,25 +31,35 @@ export class AuthenticationService {
   }
 
   public logout() {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem(environment.TOKEN_NAME);
     this.currentUserSubject$.next(null);
   }
 
+  /**
+   * In a real application this would reach out to a server
+   */
   private validateCredentials(user: User) {
-    return user.email === 'johndoe@gmail.com' && user.password === 'test123'
+    return user.email === environment.USER_EMAIL &&
+      user.password === environment.USER_PASSWORD
       ? of({
           user,
-          token: '@token',
+          token: environment.FAKE_TOKEN_VALUE,
         })
       : throwError({
           message: 'Invalid credentials',
         });
   }
 
+  /**
+   * Just to simulate a real token validation
+   */
   private isTokenValid(token: string) {
     return token?.charAt(0) === '@';
   }
 
+  /**
+   * In a real application this would reach out to a server
+   */
   private getUserData(token: string) {
     if (!this.isTokenValid(token)) {
       return throwError({
@@ -57,7 +68,7 @@ export class AuthenticationService {
     }
 
     return of({
-      email: 'johndoe@gmail.com',
+      email: environment.USER_EMAIL,
     });
   }
 }
