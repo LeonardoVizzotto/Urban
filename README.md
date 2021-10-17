@@ -2,9 +2,16 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.5.
 
+## Demo
+https://user-images.githubusercontent.com/19351745/137636314-95deea62-4c79-43a3-9d20-4f6320750342.mov
+
+## Instaling
+
+Run `npm install`
+
 ## Development server
 
-Run `npm start` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm start` for a dev server. Navigate to `http://localhost:4200/`.
 
 ## Build
 
