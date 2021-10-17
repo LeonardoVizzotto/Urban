@@ -27,6 +27,7 @@ import { Component } from '@angular/core';
       </ul>
     </footer>
     <app-toast></app-toast>
+    <app-loader></app-loader>
   `,
   styleUrls: ['./app.component.scss'],
 })

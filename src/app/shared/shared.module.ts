@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { InputComponent } from './input/input.component';
 import { ToastComponent } from './toast/toast.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { ToastComponent } from './toast/toast.component';
     SpacerComponent,
     InputComponent,
     ToastComponent,
+    LoaderComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [
@@ -32,6 +34,7 @@ import { ToastComponent } from './toast/toast.component';
     SpacerComponent,
     InputComponent,
     ToastComponent,
+    LoaderComponent,
   ],
 })
 export class SharedModule {}
