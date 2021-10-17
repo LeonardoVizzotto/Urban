@@ -1,0 +1,26 @@
+<section class="login-container">
+  <div class="content">
+    <h1 class="login-header">Welcome to Urban</h1>
+    <form [formGroup]="form" (submit)="login()">
+      <app-input
+        label="Email"
+        [errorMessage]="emailErrorMessage"
+        formControlName="email"
+        required
+        type="text"
+      ></app-input>
+      <app-spacer size="medium"></app-spacer>
+      <app-input
+        label="Password"
+        [errorMessage]="'Minimum 5 characters'"
+        formControlName="password"
+        required
+        type="password"
+      ></app-input>
+      <app-spacer size="medium"></app-spacer>
+      <app-button (onClick)="login()" type="submit" [appearance]="'primary'"
+        >Login</app-button
+      >
+    </form>
+  </div>
+</section>

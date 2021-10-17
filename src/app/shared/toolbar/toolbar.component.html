@@ -1,22 +1,12 @@
-<div class="toolbar" role="banner">
-  <a
-    aria-label="Home button"
-    title="Home"
-    tabindex="0"
-    [routerLink]="['slots']"
-  >
+<div *ngIf="user$ | async; let user" class="toolbar" role="banner">
+  <a aria-label="Home button" title="Home" tabindex="0" [routerLink]="[slots]">
     <img width="40" alt="App logo" src="/assets/logo.png" />
   </a>
 
-  <span>John Doe</span>
+  <span>{{user.email}}</span>
   <div aria-hidden="true" class="toolbar-spacer"></div>
 
-  <a
-    aria-label="My basket"
-    title="Basket"
-    tabindex="0"
-    [routerLink]="['basket']"
-  >
+  <a aria-label="My basket" title="Basket" tabindex="0" [routerLink]="[basket]">
     <svg
       xmlns="http://www.w3.org/2000/svg"
       height="24px"

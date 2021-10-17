@@ -23,7 +23,7 @@ export class WorkerSelectionComponent implements OnInit {
   ngOnInit(): void {
     this.id = this.basketService.selectedSlot?.id;
     if (!this.id) {
-      this.router.navigate(['slots']);
+      this.router.navigate([ROUTES.SLOTS]);
     }
 
     this.availableWorkers = this.workersService.getAvailableWorkersDataBySlot(

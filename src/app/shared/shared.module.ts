@@ -7,6 +7,8 @@ import { RatingComponent } from './rating/rating.component';
 import { ButtonComponent } from './button/button.component';
 import { SpacerComponent } from './spacer/spacer.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { InputComponent } from './input/input.component';
 
 @NgModule({
   declarations: [
@@ -16,8 +18,9 @@ import { RouterModule } from '@angular/router';
     RatingComponent,
     ButtonComponent,
     SpacerComponent,
+    InputComponent,
   ],
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, FormsModule],
   exports: [
     CardComponent,
     ToolBarComponent,
@@ -25,6 +28,7 @@ import { RouterModule } from '@angular/router';
     RatingComponent,
     ButtonComponent,
     SpacerComponent,
+    InputComponent,
   ],
 })
 export class SharedModule {}

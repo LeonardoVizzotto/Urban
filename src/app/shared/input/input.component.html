@@ -1,0 +1,20 @@
+<div class="app-input" [class.-invalid]="invalid">
+  <input
+    #inputRef
+    class="input"
+    [class.-filled]="value"
+    [value]="value"
+    [attr.type]="type"
+    [attr.aria-required]="required"
+    [attr.aria-invalid]="invalid"
+    [attr.aria-labelledby]="name + '-input-label'"
+    [attr.aria-errormessage]="name + '-input-error'"
+    autocomplete="off"
+    (blur)="onTouched()"
+    (input)="onChange($event.target.value)"
+  />
+  <label id="{{ name }}-input-label" class="label" [for]="name">
+    {{ label }}
+  </label>
+  <span *ngIf="invalid" class="error-message">{{ errorMessage }}</span>
+</div>
