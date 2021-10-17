@@ -8,6 +8,7 @@ import { ButtonComponent } from './button/button.component';
 import { SpacerComponent } from './spacer/spacer.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ToastComponent } from './toast/toast.component';
 import { InputComponent } from './input/input.component';
 
 @NgModule({
@@ -19,6 +20,7 @@ import { InputComponent } from './input/input.component';
     ButtonComponent,
     SpacerComponent,
     InputComponent,
+    ToastComponent,
   ],
   imports: [CommonModule, RouterModule, FormsModule],
   exports: [
@@ -29,6 +31,7 @@ import { InputComponent } from './input/input.component';
     ButtonComponent,
     SpacerComponent,
     InputComponent,
+    ToastComponent,
   ],
 })
 export class SharedModule {}

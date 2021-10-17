@@ -1,0 +1,17 @@
+<div class="toast-wrapper">
+  <div class="toast-inner">
+    <button
+      [ngClass]="{
+        toast: true,
+        '-show': toast.show,
+        '-error': toast.appearence === 'error',
+        '-success': toast.appearence === 'success'
+      }"
+      role="alert"
+      *ngFor="let toast of toasts"
+      (click)="close(toast)"
+    >
+      {{ toast.message }}
+    </button>
+  </div>
+</div>

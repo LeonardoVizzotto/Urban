@@ -5,6 +5,7 @@ import { take, catchError } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../auth/auth.service';
 import { ROUTES } from '../routes.constants';
+import { ToastService } from '../services/toast/toast.service';
 
 @Component({
   selector: 'app-login-page',
@@ -30,7 +31,8 @@ export class LoginComponent {
   constructor(
     public authService: AuthenticationService,
     private router: Router,
-    private fb: FormBuilder // private toastr: ToastrService // TODO implement toaster
+    private fb: FormBuilder,
+    private toastService: ToastService
   ) {}
 
   login() {
@@ -60,7 +62,7 @@ export class LoginComponent {
   }
 
   handleError(error: Error): Observable<any> {
-    // this.toastr.error(error);
+    this.toastService.error(`Couldn't log in, please try again`);
     return throwError(error);
   }
 }

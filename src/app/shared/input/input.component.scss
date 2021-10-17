@@ -45,18 +45,18 @@
 
   &.-invalid {
     > .input {
-      border-color: red;
+      border-color: map-get-deep($color, danger);
 
       &:focus ~ .label,
       &.-filled ~ .label {
-        color: red;
+        color: map-get-deep($color, danger);
       }
     }
   }
 
   > .error-message {
     margin-top: 3px;
-    color: red;
+    color: map-get-deep($color, danger);
     font-size: 12px;
   }
 }

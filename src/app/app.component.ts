@@ -26,6 +26,7 @@ import { Component, OnInit } from '@angular/core';
         </li>
       </ul>
     </footer>
+    <app-toast></app-toast>
   `,
   styleUrls: ['./app.component.scss'],
 })

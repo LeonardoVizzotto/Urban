@@ -1,0 +1,51 @@
+@import "shared.scss";
+
+.toast-wrapper {
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 11;
+  display: flex;
+  position: fixed;
+  align-items: center;
+  flex-direction: column;
+  pointer-events: none;
+  white-space: pre-wrap;
+}
+
+.toast-inner {
+  width: 80%;
+  max-width: 600px;
+  padding-top: 8px;
+  pointer-events: all;
+}
+
+.toast[role="alert"] {
+  width: 100%;
+  color: map-get-deep($color, white);
+  padding: 0;
+  opacity: 0;
+  position: relative;
+  font-size: 0;
+  transform: translateY(-100%);
+  transition: opacity .25s, transform .25s,
+    padding .25s, font-size .25s;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  border: none;
+
+  &.-show {
+    opacity: 1;
+    padding: 20px 0;
+    font-size: 20px;
+    transform: translateY(0);
+  }
+
+  &.-error {
+    background: map-get-deep($color, danger);
+  }
+
+  &.-success {
+    background: map-get-deep($color, secondary-light);
+  }
+}

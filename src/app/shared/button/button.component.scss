@@ -105,11 +105,6 @@ $darken: (
   margin-left: map-get-deep($spacing, small);
 }
 
-.button:disabled {
-  opacity: 0.5;
-  pointer-events: none;
-}
-
 .button:hover,
 .button:active {
   background: map-get-deep($color, secondary-dark);
