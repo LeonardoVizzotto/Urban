@@ -4,7 +4,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 ## Demo
 
-https://user-images.githubusercontent.com/19351745/137636314-95deea62-4c79-43a3-9d20-4f6320750342.mov
+https://user-images.githubusercontent.com/19351745/137644762-906af048-72d0-4f54-aa88-1359dc83c766.mov
+
+## Credentials
+email: johndoe@gmail.com  
+password: test123
 
 ## Instaling
 
