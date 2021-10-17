@@ -7,7 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 https://user-images.githubusercontent.com/19351745/137644762-906af048-72d0-4f54-aa88-1359dc83c766.mov
 
 ## Credentials
-email: johndoe@gmail.com
+email: johndoe@gmail.com  
 password: test123
 
 ## Instaling
