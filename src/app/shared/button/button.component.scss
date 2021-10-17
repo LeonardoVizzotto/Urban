@@ -11,7 +11,7 @@ $darken: (
 
 :host {
   background: transparent;
-  display: inline-block;
+  display: block;
 }
 
 @mixin appearance($color-name) {

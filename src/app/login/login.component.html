@@ -1,7 +1,7 @@
 <section class="login-container">
   <div class="content">
     <h1 class="login-header">Welcome to Urban</h1>
-    <form [formGroup]="form" (submit)="login()">
+    <form [formGroup]="form">
       <app-input
         label="Email"
         [errorMessage]="emailErrorMessage"
@@ -18,7 +18,7 @@
         type="password"
       ></app-input>
       <app-spacer size="medium"></app-spacer>
-      <app-button (onClick)="login()" type="submit" [appearance]="'primary'"
+      <app-button (onClick)="login()" [appearance]="'primary'"
         >Login</app-button
       >
     </form>
