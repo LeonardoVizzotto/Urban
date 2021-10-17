@@ -1,6 +1,7 @@
 export const enum ROUTES {
-    SLOTS = 'slots',
+    SLOTS = '',
     WORKERS = 'workers',
     CHECKOUT = 'checkout',
-    BASKET = 'basket'
+    BASKET = 'basket',
+    LOGIN = 'login'
 }

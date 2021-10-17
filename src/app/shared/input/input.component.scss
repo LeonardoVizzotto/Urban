@@ -1,0 +1,62 @@
+@import "shared.scss";
+
+.app-input {
+  width: 100%;
+  display: inline-flex;
+  z-index: 1;
+  position: relative;
+  flex-direction: column;
+  vertical-align: bottom;
+
+  > .label {
+    top: 16px;
+    left: 0;
+    width: 100%;
+    color: map-get-deep($color, secondary);
+    position: absolute;
+    font-size: 14px;
+    transition: color 0.25s, transform 0.25s, font-size 0.25s;
+    letter-spacing: 0.2px;
+    pointer-events: none;
+  }
+
+  > .input {
+    width: 100%;
+    color: map-get-deep($color, secondary-dark);
+    border: none;
+    outline: none;
+    padding: 18px 0 0;
+    font-size: 14px;
+    transition: color 0.25s, border 0.25s;
+    background: none;
+    border-bottom: 2px solid map-get-deep($color, primary);
+
+    &:focus {
+      border-color: map-get-deep($color, primary);
+    }
+
+    &:focus ~ .label,
+    &.-filled ~ .label {
+      transform: translate(0.5px, -16px);
+      font-size: 12px;
+      letter-spacing: normal;
+    }
+  }
+
+  &.-invalid {
+    > .input {
+      border-color: red;
+
+      &:focus ~ .label,
+      &.-filled ~ .label {
+        color: red;
+      }
+    }
+  }
+
+  > .error-message {
+    margin-top: 3px;
+    color: red;
+    font-size: 12px;
+  }
+}
