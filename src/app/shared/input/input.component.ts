@@ -7,10 +7,7 @@ import {
   ViewChild,
   Self,
 } from '@angular/core';
-import {
-  ControlValueAccessor,
-  NgControl,
-} from '@angular/forms';
+import { ControlValueAccessor, NgControl } from '@angular/forms';
 
 let nextUniqueId = 0;
 
@@ -76,6 +73,12 @@ export class InputComponent implements ControlValueAccessor, OnInit {
   ngOnInit(): void {
     this.element = this.elementRef.nativeElement as HTMLInputElement;
   }
+
+  /**
+   * ==============================
+   * implements ControlValueAccessor
+   * ==============================
+   */
 
   writeValue(value: any): void {
     this.value = value;

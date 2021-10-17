@@ -30,12 +30,12 @@ export class CheckoutComponent implements OnInit {
     }
   }
 
-  changeTherapist() {
+  public changeTherapist() {
     this.basketService.reset();
     this.router.navigate([ROUTES.SLOTS]);
   }
 
-  bookAppointment() {
+  public bookAppointment() {
     this.basketService.bookAppointment();
     this.toastService.success(
       `Successfully booked an appointment with ${this.selectedWorker?.name} for today ${this.selectedSlot?.localisedTime}`

@@ -1,3 +1,3 @@
-export const environment = {
-  production: true
-};
+import { environment as defaultEnvironment } from './environment';
+
+export const environment = defaultEnvironment;

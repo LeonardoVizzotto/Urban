@@ -1,16 +1,14 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-rating',
   templateUrl: './rating.component.html',
   styleUrls: ['./rating.component.scss'],
 })
-export class RatingComponent implements OnInit {
+export class RatingComponent {
   @Input() rating: string;
 
   constructor() {}
-
-  ngOnInit(): void {}
 
   get ariaLabel() {
     return `Rating of this worker is ${Math.min(

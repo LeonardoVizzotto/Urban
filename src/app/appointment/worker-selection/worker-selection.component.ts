@@ -13,7 +13,7 @@ import { WorkersService } from 'src/app/services/workers/workers.service';
 })
 export class WorkerSelectionComponent implements OnInit {
   private id?: number;
-  public availableWorkers: Observable<Worker[]>;
+  public availableWorkers$: Observable<Worker[]>;
   constructor(
     private basketService: BasketService,
     private workersService: WorkersService,
@@ -26,7 +26,7 @@ export class WorkerSelectionComponent implements OnInit {
       this.router.navigate([ROUTES.SLOTS]);
     }
 
-    this.availableWorkers = this.workersService.getAvailableWorkersDataBySlot(
+    this.availableWorkers$ = this.workersService.getAvailableWorkersDataBySlot(
       this.id!
     );
   }

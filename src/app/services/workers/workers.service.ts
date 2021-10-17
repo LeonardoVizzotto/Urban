@@ -9,6 +9,7 @@ import {
   pluck,
   switchMap,
 } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { AvailableWorker, Picture, Worker } from './model';
 
 interface GetWorkers {
@@ -29,10 +30,8 @@ interface GetRandomProfilePicture {
   providedIn: 'root',
 })
 export class WorkersService {
-  private workersUrl =
-    'https://storage.googleapis.com/urban-technical/workers.json';
-  private availableWorkersUrl =
-    'https://storage.googleapis.com/urban-technical/available-workers.json';
+  private workersUrl = `${environment.API}/workers.json`;
+  private availableWorkersUrl = `${environment.API}/available-workers.json`;
   constructor(private http: HttpClient) {}
 
   public getAvailableWorkersDataBySlot(slotId: number) {
@@ -68,9 +67,11 @@ export class WorkersService {
 
   private populateWorker(worker: Worker) {
     return this.http
-      .get<GetRandomProfilePicture>('https://randomuser.me/api/?inc=picture')
+      .get<GetRandomProfilePicture>(
+        `${environment.PROFILE_PICTURE_API}/?inc=picture`
+      )
       .pipe(
-        catchError(() => this.getDefaultUserImage()),
+        catchError(() => this.getFallbackProfilePicture()),
         map((randomUser) => ({
           ...worker,
           profilePicture: randomUser?.results[0]?.picture,
@@ -78,14 +79,14 @@ export class WorkersService {
       );
   }
 
-  private getDefaultUserImage() {
+  private getFallbackProfilePicture() {
     return of({
       results: [
         {
           picture: {
-            large: 'https://randomuser.me/api/portraits/men/22.jpg',
-            medium: 'https://randomuser.me/api/portraits/med/men/22.jpg',
-            thumbnail: 'https://randomuser.me/api/portraits/thumb/men/22.jpg',
+            large: `${environment.PROFILE_PICTURE_API}/portraits/men/22.jpg`,
+            medium: `${environment.PROFILE_PICTURE_API}/portraits/med/men/22.jpg`,
+            thumbnail: `${environment.PROFILE_PICTURE_API}/portraits/thumb/men/22.jpg`,
           },
         },
       ],

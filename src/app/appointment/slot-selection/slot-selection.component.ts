@@ -19,9 +19,14 @@ export class SlotSelectionComponent {
   constructor(
     private slotsService: SlotsService,
     private basketService: BasketService,
-    private router: Router,
+    private router: Router
   ) {}
 
+  /**
+   * Usually pagination is a better solution than infinite scroll
+   * but since I went with a mobile first approach I thought the end result
+   * would be clearer this way 
+   */
   public loadMoreSlots() {
     this.count += SLOT_INCREMENT;
   }
