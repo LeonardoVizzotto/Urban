@@ -25,3 +25,10 @@ Run `npm test` to execute the unit tests via [Jest](https://jestjs.io/).
 ## Running end-to-end tests
 
 Run `npm run e2e` to execute the end-to-end tests via a [Cypress](https://www.cypress.io/).
+
+## things I wish I had done
+- CI / CD
+- Sonarqube
+- Document containing the user stories
+- Mockups
+- better tests and greater code coverage
