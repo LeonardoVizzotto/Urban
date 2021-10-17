@@ -1,5 +1,6 @@
 import { of } from 'rxjs';
 import { HttpClientMock } from 'src/app/test/HttpClient.mock';
+import { BasketService } from '../basket/basket.service';
 import { SlotsService } from './slots.service';
 
 describe('SlotsService', () => {
@@ -24,7 +25,7 @@ describe('SlotsService', () => {
       ],
     })
   );
-  let service = new SlotsService(HttpClientMock as any);
+  let service = new SlotsService(HttpClientMock as any, new BasketService());
 
   it('should be created', () => {
     expect(service).toBeTruthy();
