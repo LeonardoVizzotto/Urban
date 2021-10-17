@@ -1,14 +1,8 @@
-import { TestBed } from '@angular/core/testing';
-
+import { HttpClientMock } from 'src/app/test/HttpClient.mock';
 import { SlotsService } from './slots.service';
 
 describe('SlotsService', () => {
-  let service: SlotsService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(SlotsService);
-  });
+  let service = new SlotsService(HttpClientMock as any);
 
   it('should be created', () => {
     expect(service).toBeTruthy();

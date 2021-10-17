@@ -1,14 +1,9 @@
-import { TestBed } from '@angular/core/testing';
+import { HttpClientMock } from 'src/app/test/HttpClient.mock';
 
 import { WorkersService } from './workers.service';
 
 describe('WorkersService', () => {
-  let service: WorkersService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(WorkersService);
-  });
+  let service = new WorkersService(HttpClientMock as any);
 
   it('should be created', () => {
     expect(service).toBeTruthy();
