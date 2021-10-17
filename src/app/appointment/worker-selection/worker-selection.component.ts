@@ -24,6 +24,7 @@ export class WorkerSelectionComponent implements OnInit {
     this.id = this.basketService.selectedSlot?.id;
     if (!this.id) {
       this.router.navigate([ROUTES.SLOTS]);
+      return;
     }
 
     this.availableWorkers$ = this.workersService.getAvailableWorkersDataBySlot(

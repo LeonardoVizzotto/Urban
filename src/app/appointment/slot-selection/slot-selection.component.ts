@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROUTES } from 'src/app/routes.constants';
 import { BasketService } from 'src/app/services/basket/basket.service';

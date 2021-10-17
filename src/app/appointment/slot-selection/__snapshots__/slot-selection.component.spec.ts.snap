@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SlotSelectionComponent should match snapshot 1`] = `
+<app-slot-selection
+  basketService={[Function BasketService]}
+  count={[Function Number]}
+  router={[Function Object]}
+  slots$={[Function Observable]}
+  slotsService={[Function Object]}
+>
+  <app-container>
+    <app-card>
+      <button
+        class="card"
+      >
+         12:00 - £81.00 
+      </button>
+    </app-card>
+    <app-card>
+      <button
+        class="card"
+      >
+         12:30 - £81.00 
+      </button>
+    </app-card>
+    <app-card>
+      <button
+        class="card"
+      >
+         13:00 - £87.00 
+      </button>
+    </app-card>
+  </app-container>
+</app-slot-selection>
+`;

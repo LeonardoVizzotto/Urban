@@ -26,7 +26,7 @@ export class CheckoutComponent implements OnInit {
     this.selectedWorker = this.basketService.selectedWorker;
 
     if (!this.selectedSlot || !this.selectedWorker) {
-      this.router.navigate([ROUTES.WORKERS]);
+      this.router.navigate([ROUTES.SLOTS]);
     }
   }
 

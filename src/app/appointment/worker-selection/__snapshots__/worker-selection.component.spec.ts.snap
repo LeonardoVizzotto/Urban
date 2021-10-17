@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`WorkerSelectionComponent should match snapshot if a slot has been selected 1`] = `
+<app-worker-selection
+  availableWorkers$={[Function Observable]}
+  basketService={[Function BasketService]}
+  id={[Function Number]}
+  router={[Function Object]}
+  workersService={[Function Object]}
+>
+  <app-container>
+    <app-card>
+      <button
+        class="card"
+      >
+        <img
+          aria-hidden="true"
+          src="https://randomuser.me/api/portraits/thumb/men/22.jpg"
+        />
+        <span>
+          John Doe 
+        </span>
+        <app-rating>
+          <div
+            aria-label="Rating of this worker is 2.9 out of 5."
+            class="rating"
+            style="--rating: 2.9;"
+          />
+        </app-rating>
+      </button>
+    </app-card>
+  </app-container>
+</app-worker-selection>
+`;

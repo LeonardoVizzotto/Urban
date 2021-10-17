@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { of } from 'rxjs';
 import { SlotsService } from '../services/slots/slots.service';
 import { WorkersService } from '../services/workers/workers.service';
@@ -29,7 +30,7 @@ export function mockProviders() {
     getAvailableWorkersDataBySlot: jest.fn().mockReturnValue(
       of([
         {
-          id: '1',
+          id: 1,
           name: 'John Doe',
           rating: '2.9',
           isNew: false,
@@ -43,8 +44,13 @@ export function mockProviders() {
     ),
   };
 
+  const router = {
+    navigate: jest.fn(),
+  };
+
   return {
     slotsService,
+    router,
     providers: [
       {
         provide: SlotsService,
@@ -54,6 +60,7 @@ export function mockProviders() {
         provide: WorkersService,
         useValue: workersService,
       },
+      { provide: Router, useValue: router },
     ],
   };
 }

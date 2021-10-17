@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CheckoutComponent should match snapshot if a slot and a worker have been selected 1`] = `
+<app-checkout
+  basketService={[Function BasketService]}
+  router={[Function Object]}
+  selectedSlot={[Function Object]}
+  selectedWorker={[Function Object]}
+  toastService={[Function ToastService]}
+>
+  <app-container>
+    <app-spacer
+      aria-hidden="true"
+      class="[object Object]"
+      size="large"
+    />
+    <img
+      alt="Worker profile picture"
+      src="https://randomuser.me/api/portraits/men/22.jpg"
+    />
+    <app-spacer
+      aria-hidden="true"
+      class="[object Object]"
+      size="small"
+    />
+    <app-rating>
+      <div
+        aria-label="Rating of this worker is 2.9 out of 5."
+        class="rating"
+        style="--rating: 2.9;"
+      />
+    </app-rating>
+    <app-spacer
+      aria-hidden="true"
+      class="[object Object]"
+      size="medium"
+    />
+    <span>
+      You selected 
+      <b>
+        John Doe
+      </b>
+       to be your therapist at 
+      <b>
+        12:00
+      </b>
+       today
+    </span>
+    <app-spacer
+      aria-hidden="true"
+      class="[object Object]"
+      size="small"
+    />
+    <span>
+      <b>
+         Price: £81.00
+      </b>
+    </span>
+    <app-spacer
+      aria-hidden="true"
+      class="[object Object]"
+      size="large"
+    />
+    <div
+      class="button-group"
+    >
+      <app-button>
+        <button
+          class="button -secondary-ghost"
+          type="button"
+        >
+          Change choices
+        </button>
+      </app-button>
+      <app-button>
+        <button
+          class="button -primary"
+          type="button"
+        >
+          Book now
+        </button>
+      </app-button>
+    </div>
+  </app-container>
+</app-checkout>
+`;
