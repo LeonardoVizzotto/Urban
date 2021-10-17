@@ -23,6 +23,10 @@ const routes: Routes = [
       import('./basket/basket.module').then((m) => m.BasketModule),
     canLoad: [AuthGuard],
   },
+  {
+    path: '**',
+    redirectTo: ROUTES.SLOTS,
+  },
 ];
 
 @NgModule({
