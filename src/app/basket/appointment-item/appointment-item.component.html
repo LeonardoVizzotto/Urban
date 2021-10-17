@@ -1,0 +1,23 @@
+<dl>
+  <dt id="a">
+    <em>Worker</em>
+    <span role="definition" aria-labelledby="a"
+      ><em>{{ appointment.worker.name }}</em></span
+    >
+  </dt>
+  <dt id="a">
+    <em>Date</em>
+    <span role="definition" aria-labelledby="a"
+      ><em>{{ appointment.slot.localisedTime }}</em></span
+    >
+  </dt>
+  <dt id="a">
+    <em>Price</em>
+    <span role="definition" aria-labelledby="a"
+      ><em>{{ appointment.slot.price }}</em></span
+    >
+  </dt>
+  <app-spacer size="small"></app-spacer>
+  <app-button (onClick)="removeAppointment.emit()" [appearance]="'secondary-ghost'">Remove</app-button>
+  <app-spacer size="medium"></app-spacer>
+</dl>

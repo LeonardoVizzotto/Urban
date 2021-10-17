@@ -1,0 +1,13 @@
+<app-container *ngIf="availableWorkers | async; let workers">
+  <app-card
+    *ngFor="let worker of workers"
+    [imageHidden]="true"
+    [imageUrl]="worker.profilePicture?.thumbnail"
+    (onClick)="selectWorker(worker)"
+  >
+    <span
+      >{{ worker.name }}
+    </span>
+    <app-rating [rating]="worker.rating"></app-rating>
+  </app-card>
+</app-container>

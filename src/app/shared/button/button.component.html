@@ -1,0 +1,13 @@
+<button
+  [ngClass]="{
+    button: true,
+    '-primary': appearance === 'primary',
+    '-primary-ghost': appearance === 'primary-ghost',
+    '-secondary': appearance === 'secondary',
+    '-secondary-ghost': appearance === 'secondary-ghost'
+  }"
+  [type]="type"
+  (click)="onClick.emit()"
+>
+  <ng-content></ng-content>
+</button>

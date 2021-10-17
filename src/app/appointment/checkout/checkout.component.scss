@@ -1,0 +1,16 @@
+img {
+  border-radius: 50%;
+}
+
+span {
+    text-align: center;
+}
+
+.button-group {
+  width: 60%;
+  display: flex;
+  gap: 20px;
+  > * {
+    flex: 1 1 0;
+  }
+}

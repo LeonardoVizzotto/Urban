@@ -1,0 +1,133 @@
+@import "shared.scss";
+
+$darken: (
+  hover: 15%,
+  active: 45%,
+);
+
+:host(.-block) {
+  width: 100%;
+}
+
+:host {
+  background: transparent;
+  display: inline-block;
+}
+
+@mixin appearance($color-name) {
+  background: map-get-deep($color, $color-name);
+  border-color: map-get-deep($color, $color-name);
+  box-shadow: 0 4px 4px 0 rgba(50, 60, 50, 0.2);
+  color: map-get-deep($color, secondary-light);
+
+  &:hover {
+    background: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "hover")
+    );
+    border-color: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "hover")
+    );
+  }
+
+  &:active {
+    background: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "active")
+    );
+    border-color: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "active")
+    );
+  }
+}
+
+@mixin appearance-ghost($color-name) {
+  background: transparent;
+  border-color: map-get-deep($color, $color-name);
+  box-shadow: 0 4px 4px 0 rgba(50, 60, 50, 0.2);
+  color: map-get-deep($color, $color-name);
+
+  &:hover {
+    background: darken(
+      map-get-deep($color, secondary-light),
+      map-get-deep($darken, "hover")
+    );
+    border-color: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "hover")
+    );
+    color: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "hover")
+    );
+  }
+
+  &:active {
+    background: darken(
+      map-get-deep($color, secondary),
+      map-get-deep($darken, "active")
+    );
+    border-color: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "active")
+    );
+    color: darken(
+      map-get-deep($color, $color-name),
+      map-get-deep($darken, "active")
+    );
+  }
+}
+
+.button {
+  align-items: center;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  color: map-get-deep($color, primary);
+  display: flex;
+  width: 100%;
+  font-weight: 700;
+  justify-content: center;
+  min-height: map-get-deep($spacing, large);
+  padding: 0 map-get-deep($spacing, medium);
+  position: relative;
+  text-decoration: none;
+  transition: all 300ms;
+}
+
+::slotted([slot="before"]) {
+  margin-right: map-get-deep($spacing, small);
+}
+
+::slotted([slot="after"]) {
+  margin-left: map-get-deep($spacing, small);
+}
+
+.button:disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.button:hover,
+.button:active {
+  background: map-get-deep($color, secondary-dark);
+  color: map-get-deep($color, primary-dark);
+}
+
+.button.-primary {
+  @include appearance(primary);
+}
+
+.button.-primary-ghost {
+  @include appearance-ghost(primary);
+}
+
+.button.-secondary {
+  @include appearance(secondary);
+}
+
+.button.-secondary-ghost {
+  @include appearance-ghost(secondary);
+}

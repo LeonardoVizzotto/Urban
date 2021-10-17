@@ -1,0 +1,12 @@
+@import "shared.scss";
+
+:host {
+  display: block;
+  height: 0;
+}
+
+@each $key, $value in map-get-deep($spacing) {
+  :host(.-size-#{$key}) {
+    height: $value;
+  }
+}

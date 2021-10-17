@@ -1,0 +1,32 @@
+@import "shared.scss";
+
+.toolbar {
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  background-color: map-get-deep($color, secondary);
+  color: map-get-deep($color, white);
+  font-weight: 600;
+
+  > .toolbar-spacer {
+    flex: 1;
+  }
+
+  > a {
+    &:focus,
+    &:hover {
+      opacity: 0.8;
+    }
+
+    > img {
+      margin: 0 16px;
+    }
+    > svg {
+      height: 40px;
+      margin: 0 16px;
+    }
+  }
+}

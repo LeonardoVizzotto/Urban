@@ -1,0 +1,32 @@
+$color: (
+  white: white,
+  grey-light: #fafafa,
+  grey-lighter: #eee,
+  grey-dark: #ddd,
+  grey-darker: #a1a1a1,
+  secondary: #003a46,
+  secondary-light: #01738a,
+  secondary-dark: #002026,
+  primary: #f4cb0b,
+  primary-dark: #ba9908,
+);
+
+$baseline: 8px;
+
+$spacing: (
+  small: $baseline,
+  medium: $baseline * 2,
+  large: $baseline * 5,
+);
+
+@function map-get-deep($map, $keys...) {
+  @each $key in $keys {
+    $map: map-get($map, $key);
+  }
+
+  @return $map;
+}
+
+@function darken($color, $amount) {
+  @return mix(#000, $color, $amount);
+}

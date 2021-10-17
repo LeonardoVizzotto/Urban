@@ -1,0 +1,22 @@
+@import "shared.scss";
+
+dl {
+  padding: 0 2em;
+  display: flex;
+  flex-direction: column;
+  > dt {
+    display: flex;
+
+    > span {
+      border-bottom: 1px dotted map-get-deep($color, secondary);
+      text-align: right;
+      flex: 1;
+    }
+  }
+}
+
+@media screen and (min-width: 500px) {
+  dl {
+    padding: 0 15vw;
+  }
+}

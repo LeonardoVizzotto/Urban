@@ -1,0 +1,27 @@
+<app-container *ngIf="selectedSlot && selectedWorker">
+  <app-spacer size="large"></app-spacer>
+  <img
+    [src]="selectedWorker.profilePicture?.large"
+    alt="Worker profile picture"
+  />
+  <app-spacer size="small"></app-spacer>
+  <app-rating [rating]="selectedWorker.rating"></app-rating>
+  <app-spacer size="medium"></app-spacer>
+  <span
+    >You selected <b>{{ selectedWorker.name }}</b> to be your therapist at
+    <b>{{ selectedSlot.localisedTime }}</b> today</span
+  >
+  <app-spacer size="small"></app-spacer>
+  <span
+    ><b> Price: {{ selectedSlot.price }}</b>
+  </span>
+  <app-spacer size="large"></app-spacer>
+  <div class="button-group">
+    <app-button [appearance]="'secondary-ghost'" (onClick)="changeTherapist()"
+      >Change choices</app-button
+    >
+    <app-button [appearance]="'primary'" (onClick)="bookAppointment()"
+      >Book now</app-button
+    >
+  </div>
+</app-container>

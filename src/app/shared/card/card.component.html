@@ -1,0 +1,8 @@
+<button class="card" (click)="onClick.emit($event)">
+  <img *ngIf="imageUrl"
+    [attr.aria-hidden]="imageHidden"
+    [src]="imageUrl"
+    [attr.alt]="imageAlt"
+  />
+  <ng-content></ng-content>
+</button>

@@ -1,0 +1,26 @@
+@import "shared.scss";
+
+:host {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  flex-shrink: 0;
+  border-top: 1px solid map-get-deep($color, grey-dark);
+  background-color: map-get-deep($color, grey-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+
+  > ul {
+    list-style: none;
+    padding: 0;
+  }
+}

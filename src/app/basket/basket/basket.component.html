@@ -1,0 +1,18 @@
+<app-container *ngIf="appointments$ | async; let appointments">
+  <div *ngIf="appointments.length; else empty" class="appointment-container">
+    <app-appointment-item
+      *ngFor="let appointment of appointments; let i = index"
+      [appointment]="appointment"
+      (removeAppointment)="removeAppointment(i)"
+    >
+    </app-appointment-item>
+  </div>
+  <ng-template #empty>
+    <span>Looks like your basket is empty</span>
+  </ng-template>
+
+  <app-spacer size="large"></app-spacer>
+  <app-button (onClick)="startBooking()" [appearance]="'primary-ghost'"
+    >Start Booking</app-button
+  >
+</app-container>

@@ -1,0 +1,23 @@
+@import "shared.scss";
+
+.rating {
+  --percent: calc(var(--rating) / 5 * 100%);
+
+  display: inline-block;
+  font-size: 1.2em;
+  font-family: Times;
+  line-height: 1;
+
+  &::before {
+    content: "★★★★★";
+    letter-spacing: 3px;
+    background: linear-gradient(
+      90deg,
+      map-get-deep($color, primary) var(--percent),
+      map-get-deep($color, grey-darker) var(--percent)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}

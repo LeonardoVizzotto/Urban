@@ -1,0 +1,14 @@
+<app-container *ngIf="slots$ | async; let slots">
+  <app-card
+    *ngFor="let slot of slots | slice: 0:count"
+    (onClick)="selectSlot(slot)"
+  >
+    {{ slot.localisedTime }} - {{ slot.price }}
+  </app-card>
+  <app-button
+    *ngIf="slots.length > count"
+    [appearance]="'secondary-ghost'"
+    (onClick)="loadMoreSlots()"
+    >Load more slots</app-button
+  >
+</app-container>
