@@ -6,6 +6,7 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
+  background-position: top;
   background-image: url("https://res.cloudinary.com/huxr6hrje/image/upload/f_auto,w_2000/v1620752669/b2c-art/home-2021/Homepage_Banner_A_3x.jpg");
 
   > .content {
@@ -17,5 +18,11 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .login-container {
+    background-size: cover;
   }
 }

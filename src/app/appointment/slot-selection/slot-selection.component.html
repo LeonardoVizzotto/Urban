@@ -1,4 +1,5 @@
 <app-container *ngIf="slots$ | async; let slots">
+  <span>Please chose the your preffered time period to schedule a session</span>
   <app-card
     *ngFor="let slot of slots | slice: 0:count"
     (onClick)="selectSlot(slot)"

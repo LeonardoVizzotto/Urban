@@ -1,13 +1,15 @@
 <app-container *ngIf="availableWorkers$ | async; let workers">
+  <span
+    >Please chose the your preffered worker to meet you at
+    {{ slot?.localisedTime }}</span
+  >
   <app-card
     *ngFor="let worker of workers"
     [imageHidden]="true"
     [imageUrl]="worker.profilePicture?.thumbnail"
     (onClick)="selectWorker(worker)"
   >
-    <span
-      >{{ worker.name }}
-    </span>
+    <span>{{ worker.name }} </span>
     <app-rating [rating]="worker.rating"></app-rating>
   </app-card>
 </app-container>

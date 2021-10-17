@@ -9,6 +9,9 @@ exports[`SlotSelectionComponent should match snapshot 1`] = `
   slotsService={[Function Object]}
 >
   <app-container>
+    <span>
+      Please chose the your preffered time period to schedule a session
+    </span>
     <app-card>
       <button
         class="card"

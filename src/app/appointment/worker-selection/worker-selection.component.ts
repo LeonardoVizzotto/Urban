@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ROUTES } from 'src/app/routes.constants';
 import { BasketService } from 'src/app/services/basket/basket.service';
+import { Slot } from 'src/app/services/slots/model';
 import { Worker } from 'src/app/services/workers/model';
 import { WorkersService } from 'src/app/services/workers/workers.service';
 
@@ -12,7 +13,7 @@ import { WorkersService } from 'src/app/services/workers/workers.service';
   styleUrls: ['./worker-selection.component.scss'],
 })
 export class WorkerSelectionComponent implements OnInit {
-  private id?: number;
+  public slot?: Slot;
   public availableWorkers$: Observable<Worker[]>;
   constructor(
     private basketService: BasketService,
@@ -21,14 +22,14 @@ export class WorkerSelectionComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.id = this.basketService.selectedSlot?.id;
-    if (!this.id) {
+    this.slot = this.basketService.selectedSlot;
+    if (!this.slot) {
       this.router.navigate([ROUTES.SLOTS]);
       return;
     }
 
     this.availableWorkers$ = this.workersService.getAvailableWorkersDataBySlot(
-      this.id!
+      this.slot!.id
     );
   }
 

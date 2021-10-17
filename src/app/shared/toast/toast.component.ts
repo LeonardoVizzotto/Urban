@@ -29,7 +29,7 @@ export class ToastComponent implements OnInit, OnDestroy {
         delay(25)
       )
       .subscribe((toast) => {
-        of(toast).pipe(delay(10000)).subscribe(this.close.bind(this));
+        of(toast).pipe(delay(5000)).subscribe(this.close.bind(this));
         toast.show = true;
       });
 

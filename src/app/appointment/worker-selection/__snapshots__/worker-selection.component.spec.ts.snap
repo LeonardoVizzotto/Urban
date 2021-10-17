@@ -4,11 +4,14 @@ exports[`WorkerSelectionComponent should match snapshot if a slot has been selec
 <app-worker-selection
   availableWorkers$={[Function Observable]}
   basketService={[Function BasketService]}
-  id={[Function Number]}
   router={[Function Object]}
+  slot={[Function Object]}
   workersService={[Function Object]}
 >
   <app-container>
+    <span>
+      Please chose the your preffered worker to meet you at 
+    </span>
     <app-card>
       <button
         class="card"
