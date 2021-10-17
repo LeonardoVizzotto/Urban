@@ -32,3 +32,4 @@ Run `npm run e2e` to execute the end-to-end tests via a [Cypress](https://www.cy
 - Document containing the user stories
 - Mockups
 - better tests and greater code coverage
+- feature flags
